@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "PDF Viewer",
+  "name": "Invertor",
   "version": "PDFJSSCRIPT_VERSION",
-  "description": "Uses HTML5 to display PDF files directly in the browser.",
+  "description": "Uses HTML5 to display PDF files directly in the browser. (in dark mode)",
   "icons": {
     "128": "icon128.png",
     "48": "icon48.png",
@@ -12,16 +12,13 @@
     "fileBrowserHandler",
     "webRequest", "webRequestBlocking",
     "<all_urls>",
-    "tabs",
+    "activeTabs",
     "webNavigation",
     "storage"
   ],
   "content_scripts": [{
     "matches": [
-      "http://*/*",
-      "https://*/*",
-      "ftp://*/*",
-      "file://*/*"
+      "<all_urls>"
     ],
     "run_at": "document_start",
     "all_frames": true,

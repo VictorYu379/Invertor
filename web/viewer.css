@@ -898,6 +898,10 @@ html[dir="rtl"] #viewOutline.toolbarButton::before {
   content: url(images/toolbarButton-search.png);
 }
 
+#invertButton.toolbarButton::before {
+  content: url(images/test-button.png);
+}
+
 .toolbarButton.pdfSidebarNotification::after {
   position: absolute;
   display: inline-block;
@@ -1698,6 +1702,10 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   #viewFind.toolbarButton::before {
     content: url(images/toolbarButton-search@2x.png);
+  }
+
+  #invertButton.toolbarButton::before {
+    content: url(images/test-button@2x.png);
   }
 
   .secondaryToolbarButton.firstPage::before {

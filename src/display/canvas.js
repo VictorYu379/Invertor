@@ -1458,7 +1458,6 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
       ctx.save();
       let patternTransform;
       if (current.patternFill) {
-        debugger;
         // TODO: Patterns are not applied correctly to text if a non-embedded
         // font is used. E.g. issue 8111 and ShowText-ShadingPattern.pdf.
         ctx.save();
@@ -1543,13 +1542,14 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
               fontSize / fontSizeScale;
           }
         }
-        debugger;
         // Only attempt to draw the glyph if it is actually in the embedded font
         // file or if there isn't a font file so the fallback font is shown.
         if (glyph.isInFont || font.missingFile) {
           if (simpleFillText && !accent) {
             // common case
-            ctx.fillStyle = '#FFFFFF';
+            // invert color
+            // ctx.fillStyle = '#FFFFFF';
+            ctx.fillStyle = '#000000';
             ctx.fillText(character, scaledX, scaledY);
           } else {
             this.paintChar(character, scaledX, scaledY, patternTransform);
@@ -1688,7 +1688,6 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
       this.current.strokeColor = color;
     },
     setFillRGBColor: function CanvasGraphics_setFillRGBColor(r, g, b) {
-      debugger;
       // var color = Util.makeCssRgb(255 - r, 255 - g, 255 - b);
       var color = Util.makeCssRgb(r, g, b)
       this.ctx.fillStyle = color;

@@ -36,6 +36,7 @@ import { PasswordPrompt } from './password_prompt';
 import { PDFAttachmentViewer } from './pdf_attachment_viewer';
 import { PDFDocumentProperties } from './pdf_document_properties';
 import { PDFFindBar } from './pdf_find_bar';
+import { ColorInvertor } from './colorInvertor';
 import { PDFFindController } from './pdf_find_controller';
 import { PDFHistory } from './pdf_history';
 import { PDFLinkService } from './pdf_link_service';
@@ -353,6 +354,8 @@ let PDFViewerApplication = {
     pdfLinkService.setHistory(this.pdfHistory);
 
     this.findBar = new PDFFindBar(appConfig.findBar, eventBus, this.l10n);
+    debugger;
+    this.colorInvertor = new ColorInvertor(appConfig.invertButton, this.forceRendering);
 
     this.pdfDocumentProperties =
       new PDFDocumentProperties(appConfig.documentProperties,

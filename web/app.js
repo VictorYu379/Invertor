@@ -354,8 +354,8 @@ let PDFViewerApplication = {
     pdfLinkService.setHistory(this.pdfHistory);
 
     this.findBar = new PDFFindBar(appConfig.findBar, eventBus, this.l10n);
-    debugger;
-    this.colorInvertor = new ColorInvertor(appConfig.invertButton, this.forceRendering);
+    // debugger;
+    this.colorInvertor = new ColorInvertor(appConfig.invertButton, this);
 
     this.pdfDocumentProperties =
       new PDFDocumentProperties(appConfig.documentProperties,
@@ -624,6 +624,12 @@ let PDFViewerApplication = {
    *                      is opened.
    */
   async open(file, args) {
+    // debugger;
+
+    // Invertor Code
+    this.colorInvertor.setFileInput(file);
+    // Invertor Code
+
     if (this.pdfLoadingTask) {
       // We need to destroy already opened document.
       await this.close();
@@ -1892,6 +1898,7 @@ function webViewerHashchange(evt) {
 let webViewerFileInputChange;
 if (typeof PDFJSDev === 'undefined' || PDFJSDev.test('GENERIC')) {
   webViewerFileInputChange = function webViewerFileInputChange(evt) {
+    // debugger;
     if (PDFViewerApplication.pdfViewer &&
         PDFViewerApplication.pdfViewer.isInPresentationMode) {
       return; // Opening a new PDF file isn't supported in Presentation Mode.

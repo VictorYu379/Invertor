@@ -1001,7 +1001,9 @@ class PDFPageProxy {
   render({ canvasContext, viewport, intent = 'display', enableWebGL = false,
            renderInteractiveForms = false, transform = null, imageLayer = null,
            canvasFactory = null, background = 'rgb(255,255,255)', }) {
-    // debugger;
+    if (localStorage.getItem("darkMode") === "1") {
+      background = 'rgb(0,0,0)';
+    }
     const stats = this._stats;
     stats.time('Overall');
 
@@ -2462,6 +2464,7 @@ const InternalRenderTask = (function InternalRenderTaskClosure() {
     constructor({ callback, params, objs, commonObjs, operatorList, pageNumber,
                   canvasFactory, webGLContext, useRequestAnimationFrame = false,
                   pdfBug = false, }) {
+      debugger;
       this.callback = callback;
       this.params = params;
       this.objs = objs;
@@ -2487,7 +2490,6 @@ const InternalRenderTask = (function InternalRenderTaskClosure() {
       this._nextBound = this._next.bind(this);
       this._canvas = params.canvasContext.canvas;
     }
-
     initializeGraphics(transparency = false) {
       if (this.cancelled) {
         return;

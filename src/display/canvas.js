@@ -1548,8 +1548,11 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
           if (simpleFillText && !accent) {
             // common case
             // invert color
-            // ctx.fillStyle = '#FFFFFF';
+            debugger;
             ctx.fillStyle = '#000000';
+            if (localStorage.getItem("darkMode") === "1") {
+              ctx.fillStyle = '#FFFFFF';
+            }
             ctx.fillText(character, scaledX, scaledY);
           } else {
             this.paintChar(character, scaledX, scaledY, patternTransform);

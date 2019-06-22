@@ -7,13 +7,13 @@ class ColorInvertor {
         self = app;
 
         this.button.addEventListener('click', function () {
-            debugger;
-            PDFViewerApplication.open(self.fileInput);
-            if (localStorage.getItem("darkMode") !== "1") {
-                localStorage.setItem("darkMode", "1");
-            } else {
-                localStorage.setItem("darkMode", 0);
-            }
+            modeSwitchContainer.classList.toggle("hidden");
+            // PDFViewerApplication.open(self.fileInput);
+            // if (localStorage.getItem("darkMode") !== "1") {
+            //     localStorage.setItem("darkMode", "1");
+            // } else {
+            //     localStorage.setItem("darkMode", 0);
+            // }
         });
     }
 
@@ -21,6 +21,8 @@ class ColorInvertor {
         self.fileInput = file;
     }
 }
+
+
 
 export {
     ColorInvertor

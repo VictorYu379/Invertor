@@ -355,7 +355,7 @@ let PDFViewerApplication = {
 
     this.findBar = new PDFFindBar(appConfig.findBar, eventBus, this.l10n);
     // debugger;
-    this.colorInvertor = new ColorInvertor(appConfig.invertButton, this);
+    this.colorInvertor = new ColorInvertor(appConfig.modeButton, this);
 
     this.pdfDocumentProperties =
       new PDFDocumentProperties(appConfig.documentProperties,

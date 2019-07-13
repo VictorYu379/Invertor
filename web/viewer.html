@@ -123,13 +123,15 @@ See https://github.com/adobe-type-tools/cmap-resources
         </div>  <!-- findbar -->
 
         <div class="doorHanger hidden modeSwitch" id="modeSwitchContainer">
-          <div class="splitToolbarButton">
-            <button class="toolbarButton">
-              <span data-l10n-id="find_previous_label">a</span>
-              <span data-l10n-id="find_previous_label">a</span>
+          <div class="modeSelection" >
+            <button style="background-color: white; color: black">
+              Original
             </button>
-            <button id="findNext" class="toolbarButton" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-              <span data-l10n-id="find_next_label">Next</span>
+            <button style="background-color: rgb(253,246,227); color: black;">
+              Warm
+            </button>
+            <button style="background-color: rgb(23,24,28); color: white">
+              Dark
             </button>
           </div>
         </div>
@@ -227,8 +229,8 @@ See https://github.com/adobe-type-tools/cmap-resources
                   <span data-l10n-id="findbar_label">Find</span>
                 </button>
                 <button id="modeButton" class="toolbarButton" title="Switch Mode" tabindex="12" data-l10n-id="switchmode">
-                  <span data-l10n-id="findbar_label" class="color-fg">Switch Mode</span>
-                  <span data-l10n-id="findbar_label" class="color-bg">Switch Mode</span>
+                  <span class="color-fg"></span>
+                  <span class="color-bg"></span>
                 </button>
                 <div class="splitToolbarButton hiddenSmallView">
                   <button class="toolbarButton pageUp" title="Previous Pages" id="previous" tabindex="13" data-l10n-id="previous">

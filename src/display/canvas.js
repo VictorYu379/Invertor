@@ -1549,7 +1549,7 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
             // common case
             // invert color
             ctx.fillStyle = '#000000';
-            if (localStorage.getItem("darkMode") === "1") {
+            if (localStorage.getItem("darkMode") === "2") {
               ctx.fillStyle = '#E3E7E8';
             }
             ctx.fillText(character, scaledX, scaledY);
@@ -1685,7 +1685,7 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
       this.current.patternFill = true;
     },
     setStrokeRGBColor: function CanvasGraphics_setStrokeRGBColor(r, g, b) {
-      if (localStorage.getItem("darkMode") === "1") {
+      if (localStorage.getItem("darkMode") === "2") {
         var color = Util.makeCssRgb(255 - r, 255 - g, 255 - b);
       } else {
         var color = Util.makeCssRgb(r, g, b)
@@ -1694,7 +1694,7 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
       this.current.strokeColor = color;
     },
     setFillRGBColor: function CanvasGraphics_setFillRGBColor(r, g, b) {
-      if (localStorage.getItem("darkMode") === "1") {
+      if (localStorage.getItem("darkMode") === "2") {
         var color = Util.makeCssRgb(255 - r, 255 - g, 255 - b);
       } else {
         var color = Util.makeCssRgb(r, g, b)

@@ -1000,9 +1000,11 @@ class PDFPageProxy {
    */
   render({ canvasContext, viewport, intent = 'display', enableWebGL = false,
            renderInteractiveForms = false, transform = null, imageLayer = null,
-           canvasFactory = null, background = 'rgb(253,246,227)', }) {
+           canvasFactory = null, background = 'rgb(255,255,255)', }) {
     if (localStorage.getItem("darkMode") === "1") {
-      background = 'rgb(23,24,28)';
+      background = 'rgb(253,246,227)';
+    } else if (localStorage.getItem("darkMode") === "2") {
+      background = 'rgb(23,24,28)'
     }
     const stats = this._stats;
     stats.time('Overall');

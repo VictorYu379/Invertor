@@ -355,7 +355,7 @@ let PDFViewerApplication = {
 
     this.findBar = new PDFFindBar(appConfig.findBar, eventBus, this.l10n);
     // debugger;
-    this.colorInvertor = new ColorInvertor(appConfig.modeButton, this);
+    this.colorInvertor = new ColorInvertor(this);
 
     this.pdfDocumentProperties =
       new PDFDocumentProperties(appConfig.documentProperties,
@@ -624,10 +624,22 @@ let PDFViewerApplication = {
    *                      is opened.
    */
   async open(file, args) {
-    // debugger;
+
+    var colorCode = {
+      "0": ["rgb(0,0,0)", "rgb(255,255,255)"],
+      "1": ["rgb(0,0,0)", "rgb(253,246,227)"],
+      "2": ["rgb(227,231,232)", "rgb(23,24,28)"]
+    };
+
+    debugger;
+    if (localStorage.getItem("darkMode") === null) {
+      localStorage.setItem("darkMode", "0");
+    }
 
     // Invertor Code
     this.colorInvertor.setFileInput(file);
+    this.colorInvertor.setForegroundColor(colorCode[localStorage.getItem("darkMode")][0]);
+    this.colorInvertor.setBackgroundColor(colorCode[localStorage.getItem("darkMode")][1]);
     // Invertor Code
 
     if (this.pdfLoadingTask) {

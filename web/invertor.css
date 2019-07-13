@@ -7,6 +7,7 @@
     top: -17px;
     right: -5px;
     border: 1px solid rgba(169,169,169,.5);
+    overflow: hidden;
 }
 
 #modeButton > .color-fg {
@@ -19,4 +20,61 @@
     right: 3px;
     border: 1px solid rgba(169,169,169,.5);
     z-index: 50000;
+    overflow: hidden;
+}
+
+.modeSwitch {
+    position: relative;
+    height: 32px;
+    background-color: #474747; /* fallback */
+    background-image: url(images/texture.png),
+                      linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+    top: 32px;
+    position: absolute;
+    z-index: 10000;
+    height: auto;
+    min-width: 16px;
+    padding: 0px 6px 0px 6px;
+    margin: 4px 2px 4px 2px;
+    color: hsl(0,0%,85%);
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+    cursor: default;
+    left: 107px;
+}
+
+.modeSelection {
+    position: relative;
+    display: inline-grid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.modeSelection > button {
+   background-color: hsla(0,0%,0%,.12);
+   background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+   background-clip: padding-box;
+   border: 1px solid hsla(0,0%,0%,.35);
+   border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+   box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+               0 0 1px hsla(0,0%,100%,.15) inset,
+               0 1px 0 hsla(0,0%,100%,.05);
+   transition-property: background-color, border-color, box-shadow;
+   transition-duration: 150ms;
+   transition-timing-function: ease;
+ 
+   min-width: 16px;
+   padding: 2px 6px 0;
+   border: 1px solid transparent;
+   border-radius: 2px;
+   color: hsla(0,0%,100%,.8);
+   font-size: 12px;
+   line-height: 14px;
+   user-select: none;
+   /* Opera does not support user-select, use <... unselectable="on"> instead */
+   cursor: default;
+   transition-property: background-color, border-color, box-shadow;
+   transition-duration: 150ms;
+   transition-timing-function: ease;
 }

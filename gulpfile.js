@@ -927,6 +927,9 @@ gulp.task('chromium-pre', gulp.series('buildnumber', 'default_preferences',
     preprocessCSS('web/viewer.css', 'chrome', defines, true)
         .pipe(postcss([autoprefixer({ browsers: ['chrome >= 49'], })]))
         .pipe(gulp.dest(CHROME_BUILD_CONTENT_DIR + 'web')),
+    preprocessCSS('web/invertor.css', 'chrome', defines, true)
+        .pipe(postcss([autoprefixer({ browsers: ['chrome >= 49'], })]))
+        .pipe(gulp.dest(CHROME_BUILD_CONTENT_DIR + 'web')),
 
     gulp.src('LICENSE').pipe(gulp.dest(CHROME_BUILD_DIR)),
     gulp.src('extensions/chromium/manifest.json')

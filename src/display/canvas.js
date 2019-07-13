@@ -1548,10 +1548,9 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
           if (simpleFillText && !accent) {
             // common case
             // invert color
-            debugger;
             ctx.fillStyle = '#000000';
-            if (localStorage.getItem("darkMode") === "1") {
-              ctx.fillStyle = '#FFFFFF';
+            if (localStorage.getItem("darkMode") === "2") {
+              ctx.fillStyle = '#E3E7E8';
             }
             ctx.fillText(character, scaledX, scaledY);
           } else {
@@ -1686,13 +1685,20 @@ var CanvasGraphics = (function CanvasGraphicsClosure() {
       this.current.patternFill = true;
     },
     setStrokeRGBColor: function CanvasGraphics_setStrokeRGBColor(r, g, b) {
-      var color = Util.makeCssRgb(r, g, b);
+      if (localStorage.getItem("darkMode") === "2") {
+        var color = Util.makeCssRgb(255 - r, 255 - g, 255 - b);
+      } else {
+        var color = Util.makeCssRgb(r, g, b)
+      }
       this.ctx.strokeStyle = color;
       this.current.strokeColor = color;
     },
     setFillRGBColor: function CanvasGraphics_setFillRGBColor(r, g, b) {
-      // var color = Util.makeCssRgb(255 - r, 255 - g, 255 - b);
-      var color = Util.makeCssRgb(r, g, b)
+      if (localStorage.getItem("darkMode") === "2") {
+        var color = Util.makeCssRgb(255 - r, 255 - g, 255 - b);
+      } else {
+        var color = Util.makeCssRgb(r, g, b)
+      }
       this.ctx.fillStyle = color;
       this.current.fillColor = color;
       this.current.patternFill = false;

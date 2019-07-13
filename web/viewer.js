@@ -179,7 +179,8 @@ function getViewerConfiguration() {
     printContainer: document.getElementById('printContainer'),
     openFileInputName: 'fileInput',
     debuggerScriptPath: './debugger.js',
-    invertButton: document.getElementById('invertButton'),
+    modeButton: document.getElementById('modeButton'),
+    modeSwitchContainer: document.getElementById('modeSwitchContainer')
   };
 }
 

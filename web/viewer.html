@@ -39,6 +39,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 <!--#include viewer-snippet-chrome-extension.html-->
 <!--#endif-->
 
+    <link rel="stylesheet" href="invertor.css">
     <link rel="stylesheet" href="viewer.css">
 <!--#if !PRODUCTION-->
     <link rel="resource" type="application/l10n" href="locale/locale.properties">
@@ -120,6 +121,20 @@ See https://github.com/adobe-type-tools/cmap-resources
             <span id="findMsg" class="toolbarLabel"></span>
           </div>
         </div>  <!-- findbar -->
+
+        <div class="doorHanger hidden modeSwitch" id="modeSwitchContainer">
+          <div class="modeSelection" >
+            <button style="background-color: white; color: black">
+              Original
+            </button>
+            <button style="background-color: rgb(253,246,227); color: black;">
+              Warm
+            </button>
+            <button style="background-color: rgb(23,24,28); color: white">
+              Dark
+            </button>
+          </div>
+        </div>
 
         <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
           <div id="secondaryToolbarButtonContainer">
@@ -213,8 +228,9 @@ See https://github.com/adobe-type-tools/cmap-resources
                 <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar">
                   <span data-l10n-id="findbar_label">Find</span>
                 </button>
-                <button id="invertButton" class="toolbarButton" title="Invert Color" tabindex="12" data-l10n-id="invertcolor">
-                  <span data-l10n-id="findbar_label">Invert</span>
+                <button id="modeButton" class="toolbarButton" title="Switch Mode" tabindex="12" data-l10n-id="switchmode">
+                  <span class="color-fg"></span>
+                  <span class="color-bg"></span>
                 </button>
                 <div class="splitToolbarButton hiddenSmallView">
                   <button class="toolbarButton pageUp" title="Previous Pages" id="previous" tabindex="13" data-l10n-id="previous">

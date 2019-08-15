@@ -26,7 +26,7 @@ Beside the existing functionality of PDF.js, Invertor added one component on the
 
 ## Original
 
-![Original Mode](assets/img/original.png =100x100)
+![Original Mode](assets/img/original.png)
 
 ## Warm
 

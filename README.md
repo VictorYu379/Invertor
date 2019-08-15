@@ -14,7 +14,7 @@ Run
 
     $ gulp server
 
-to run the service on your local machine, then open
+at the root directory of this repo to start the server on your local machine, then open
 
 + http://localhost:8888/web/viewer.html
 
@@ -22,14 +22,16 @@ to view the sample documents in your browser.
 
 ## Overview of the extra functionality provided by this project
 
-Original
+Beside the existing functionality of PDF.js, Invertor added one component on the top bar of the viewer. Beside the `search` button (the magnifier-shaped icon), the button that looks like the classic color palette button in Photoshop is the `color theme` button. Click it you will have three themes to choose from. `Original`, `Warm` and `Dark` correspond to three combos of background color and foreground color. For more graphical explanation, please refer to the pictures below.
 
-![Original Mode](assets/img/original.png)
+## Original
 
-Warm
+![Original Mode](assets/img/original.png =100x100)
+
+## Warm
 
 ![Warm Mode](assets/img/warm.png)
 
-Dark
+## Dark
 
 ![Dark Mode](assets/img/dark.png)
